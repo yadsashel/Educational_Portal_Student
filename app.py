@@ -15,7 +15,7 @@ if not os.path.exists(UPLOAD_FOLDER):
 # Route for the home page
 @app.route('/')
 def home():
-    return render_template('student_view.html') 
+    return render_template('../templates/student_view.html') 
 
 # Route for uploading files
 @app.route('/upload', methods=['GET', 'POST'])
