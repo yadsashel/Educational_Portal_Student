@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Fetch the uploaded files from the server
-    fetch('http://127.0.0.1:5000/files')
+    fetch('https://educational-portal-student.onrender.com/files')
         .then(response => response.json())
         .then(data => {
             displayLessons(data.files);
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Show all files on button click
     viewAllFilesButton.addEventListener('click', () => {
-        fetch('http://127.0.0.1:5000/files')
+        fetch('https://educational-portal-student.onrender.com/files')
             .then(response => response.json())
             .then(data => {
                 displayAllFiles(data.files);
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault(); // Prevent the default form submission
         const formData = new FormData(uploadForm);
 
-        fetch('http://127.0.0.1:5000/upload', {
+        fetch('https://educational-portal-student.onrender.com/upload', {
             method: 'POST',
             body: formData,
         })
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             if (data.success) {
                 alert('File uploaded successfully!');
-                fetch('http://127.0.0.1:5000/files') // Refresh the file list
+                fetch('https://educational-portal-student.onrender.com/files') // Refresh the file list
                     .then(response => response.json())
                     .then(data => {
                         displayLessons(data.files);
