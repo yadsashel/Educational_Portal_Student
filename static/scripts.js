@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Fetch the uploaded files from the server
-    fetch('https://educational-portal-student.onrender.com/files') // Using the Render URL
+    fetch('educationalportalstudent-production.up.railway.app/files') // Using the Render URL
         .then(response => response.json())
         .then(data => {
             displayLessons(data.files);

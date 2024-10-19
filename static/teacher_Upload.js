@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Fetch the uploaded files from the server
-    fetch('https://educational-portal-student.onrender.com/files')
+    fetch('educationalportalstudent-production.up.railway.app/files')
         .then(response => response.json())
         .then(data => {
             displayLessons(data.files);
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Show all files on button click
     viewAllFilesButton.addEventListener('click', () => {
-        fetch('https://educational-portal-student.onrender.com/files')
+        fetch('educationalportalstudent-production.up.railway.app/files')
             .then(response => response.json())
             .then(data => {
                 displayAllFiles(data.files);
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault(); // Prevent the default form submission
         const formData = new FormData(uploadForm);
 
-        fetch('https://educational-portal-student.onrender.com/upload', {
+        fetch('educationalportalstudent-production.up.railway.app/upload', {
             method: 'POST',
             body: formData,
         })
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             if (data.success) {
                 alert('File uploaded successfully!');
-                fetch('https://educational-portal-student.onrender.com/files') // Refresh the file list
+                fetch('educationalportalstudent-production.up.railway.app/files') // Refresh the file list
                     .then(response => response.json())
                     .then(data => {
                         displayLessons(data.files);
