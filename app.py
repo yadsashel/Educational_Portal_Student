@@ -12,10 +12,10 @@ UPLOAD_FOLDER = 'static/uploads/'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
-# Route for home page
+# Route for the home page
 @app.route('/')
 def home():
-    return render_template('student_view.html')  # عرض الصفحة الرئيسية
+    return render_template('student_view.html')  # عوض home.html حطينا student_view.html
 
 # Route for uploading files
 @app.route('/upload', methods=['GET', 'POST'])
@@ -47,6 +47,16 @@ def get_files():
 def student_view():
     files = fetch_all_files()  # Fetch from database
     return render_template('student_view.html', files=files)
+
+# Route for about page
+@app.route('/about')
+def about():
+    return render_template('About.html')  # Make sure this file exists
+
+# Route for contact page
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')  # Make sure this file exists
 
 # Function to store file information in the database
 def store_file_in_db(file_name):
