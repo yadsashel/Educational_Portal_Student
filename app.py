@@ -12,6 +12,11 @@ UPLOAD_FOLDER = 'static/uploads/'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
+# Route for home page
+@app.route('/')
+def home():
+    return render_template('student_view.html')  # عرض الصفحة الرئيسية
+
 # Route for uploading files
 @app.route('/upload', methods=['GET', 'POST'])
 def teacher_upload():
