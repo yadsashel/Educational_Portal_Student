@@ -1,10 +1,10 @@
 import mysql.connector
 
 def get_db_connection():
-    conn = mysql.connector.connect(
-        host="sql102.infinityfree.com",  
-        user="if0_37546575",  
-        password="2002@Yad25",  
-        database="if0_37546575_educational_portal"  
+    return mysql.connector.connect(
+        host='sql102.infinityfree.com',  # Your MySQL hostname
+        user='if0_37546575',             # Your MySQL username
+        password='2002Yad25',            # Your MySQL password
+        database='if0_37546575_educational_portal',  # Your MySQL database name
+        port=3306  # Optional, default MySQL port
     )
-    return conn
