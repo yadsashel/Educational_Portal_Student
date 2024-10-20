@@ -50,7 +50,7 @@ def get_files():
 # Route for about page
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('About.html')
 
 # Route for contact page
 @app.route('/contact')
