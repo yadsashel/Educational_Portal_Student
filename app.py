@@ -15,7 +15,7 @@ if not os.path.exists(UPLOAD_FOLDER):
 # Route for the home page
 @app.route('/')
 def home():
-    return render_template('student_view.html') 
+    return render_template('student_view.html')
 
 # Route for uploading files
 @app.route('/upload', methods=['GET', 'POST'])
@@ -42,21 +42,15 @@ def get_files():
     files = fetch_all_files()  # Fetch from database
     return jsonify({'files': files})
 
-# Route for students to view files
-@app.route('/view')
-def student_view():
-    files = fetch_all_files()  # Fetch from database
-    return render_template('student_view.html', files=files)
-
 # Route for about page
 @app.route('/about')
 def about():
-    return render_template('About.html')  # Make sure this file exists
+    return render_template('About.html')  # Ensure this file exists
 
 # Route for contact page
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')  # Make sure this file exists
+    return render_template('contact.html')  # Ensure this file exists
 
 # Function to store file information in the database
 def store_file_in_db(file_name):

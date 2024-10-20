@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Fetch the uploaded files from the server
-    fetch('educationalportalstudent-production.up.railway.app/files') // Using the Render URL
+    fetch('/files') // Ensure this URL matches your Flask route
         .then(response => response.json())
         .then(data => {
             displayLessons(data.files);
