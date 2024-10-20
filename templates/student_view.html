@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student View</title>
-    <link rel="stylesheet" href="../style/styles.css"> <!-- Updated path -->
+    <link rel="stylesheet" href="{{ url_for('serve_styles', filename='styles.css') }}">
 </head>
 <body>
 
@@ -34,6 +34,6 @@
         </ul>
     </div>
 
-    <script src="/static/scripts.js"></script> <!-- Updated path -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>
