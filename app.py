@@ -12,10 +12,10 @@ UPLOAD_FOLDER = 'static/uploads/'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
-# Route for serving CSS files
-@app.route('/static/style/<path:filename>')
-def serve_styles(filename):
-    return send_from_directory('static/style', filename)
+# Route for serving CSS files (not necessary if you use url_for)
+@app.route('/css/<path:filename>')
+def serve_css(filename):
+    return send_from_directory('Css', filename)
 
 # Route for the home page
 @app.route('/')
@@ -50,7 +50,7 @@ def get_files():
 # Route for about page
 @app.route('/about')
 def about():
-    return render_template('About.html')
+    return render_template('about.html')
 
 # Route for contact page
 @app.route('/contact')
