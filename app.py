@@ -12,15 +12,15 @@ UPLOAD_FOLDER = 'static/uploads/'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
-# Route to serve CSS files
-@app.route('/styles/<path:filename>')
+# Route for serving CSS files
+@app.route('/style/<path:filename>')
 def serve_styles(filename):
-    return send_from_directory('styles', filename)
+    return send_from_directory('style', filename)
 
 # Route for the home page
 @app.route('/')
 def home():
-    return render_template('student_view.html') 
+    return render_template('student_view.html')
 
 # Route for uploading files
 @app.route('/upload', methods=['GET', 'POST'])
@@ -46,12 +46,6 @@ def teacher_upload():
 def get_files():
     files = fetch_all_files()  # Fetch from database
     return jsonify({'files': files})
-
-# Route for students to view files
-@app.route('/view')
-def student_view():
-    files = fetch_all_files()  # Fetch from database
-    return render_template('student_view.html', files=files)
 
 # Route for about page
 @app.route('/about')
