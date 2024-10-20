@@ -43,12 +43,12 @@ def get_files():
     return jsonify({'files': files})
 
 # Route for about page
-@app.route('')
+@app.route('/')
 def about():
     return render_template('About.html')  # Ensure this file exists
 
 # Route for contact page
-@app.route('')
+@app.route('/')
 def contact():
     return render_template('contact.html')  # Ensure this file exists
 
