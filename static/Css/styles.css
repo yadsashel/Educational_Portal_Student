@@ -71,6 +71,7 @@ header nav ul li a {
 /* Media query for smaller screens */
 @media (max-width: 600px) {
     header nav ul {
+        gap: 20px; /* Set gap to 20px for mobile */
         flex-direction: row; /* Keep items in a row */
         justify-content: flex-end; /* Align items to the right */
         align-items: center; /* Center items vertically */
